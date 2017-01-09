@@ -1,0 +1,26 @@
+# Eclipse
+.settings/
+.classpath
+.project
+bin/
+
+# Gradle
+.gradle/
+build/
+
+# Minecraft
+config/
+logs/
+mods/
+resourcepacks/
+saves/
+world/
+server.properties
+eula.txt
+options.txt
+banned-ips.json
+banned-players.json
+ops.json
+usercache.json
+usernamecache.json
+whitelist.json

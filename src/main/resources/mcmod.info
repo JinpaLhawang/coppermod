@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "coppermod",
+    "name": "Copper Mod",
+    "description": "",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["JinpaLhawang"],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
