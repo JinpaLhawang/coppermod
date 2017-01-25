@@ -16,11 +16,13 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.jinpalhawang.jambudvipa.block.ModBlocks;
 import com.jinpalhawang.jambudvipa.item.ModItems;
 import com.jinpalhawang.jambudvipa.proxy.CommonProxy;
 import com.jinpalhawang.jambudvipa.recipe.ModRecipes;
+import com.jinpalhawang.jambudvipa.world.ModWorldGeneration;
 
 @Mod(
     modid = CopperMod.MODID,
@@ -48,6 +50,8 @@ public class CopperMod {
     System.out.println(MODNAME + " is loading!");
     ModBlocks.init();
     ModItems.init();
+
+    GameRegistry.registerWorldGenerator(new ModWorldGeneration(), 3);
 
     // TEST CODE {
     try {
