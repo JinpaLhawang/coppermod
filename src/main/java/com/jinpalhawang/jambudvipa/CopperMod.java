@@ -7,10 +7,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import com.jinpalhawang.jambudvipa.block.ModBlocks;
-import com.jinpalhawang.jambudvipa.item.ModItems;
-import com.jinpalhawang.jambudvipa.proxy.CommonProxy;
-
+import net.minecraft.item.Item;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -18,6 +16,11 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+import com.jinpalhawang.jambudvipa.block.ModBlocks;
+import com.jinpalhawang.jambudvipa.item.ModItems;
+import com.jinpalhawang.jambudvipa.proxy.CommonProxy;
+import com.jinpalhawang.jambudvipa.recipe.ModRecipes;
 
 @Mod(
     modid = CopperMod.MODID,
@@ -28,6 +31,9 @@ public class CopperMod {
   public static final String MODID = "coppermod";
   public static final String MODNAME = "Copper Mod";
   public static final String VERSION = "1.0.0";
+
+  public static final Item.ToolMaterial copperToolMaterial =
+      EnumHelper.addToolMaterial("COPPER", 2, 500, 6, 2, 14);
 
   @SidedProxy(
       serverSide = "com.jinpalhawang.jambudvipa.proxy.CommonProxy",
@@ -40,9 +46,10 @@ public class CopperMod {
   @EventHandler
   public void preInit(FMLPreInitializationEvent event) {
     System.out.println(MODNAME + " is loading!");
-    ModItems.init();
     ModBlocks.init();
+    ModItems.init();
 
+    // TEST CODE {
     try {
       URL url = new URL("http://www.google.com");
       HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -70,11 +77,13 @@ public class CopperMod {
     } catch (IOException e) {
       e.printStackTrace();
     }
+    // } TEST CODE
 
   }
 
   @EventHandler
   public void init(FMLInitializationEvent e) {
+    ModRecipes.init();
   }
 
   @EventHandler

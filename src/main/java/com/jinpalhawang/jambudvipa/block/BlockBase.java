@@ -1,13 +1,14 @@
 package com.jinpalhawang.jambudvipa.block;
 
-import com.jinpalhawang.jambudvipa.CopperMod;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.Item;
 
-public class BlockBase extends Block {
+import com.jinpalhawang.jambudvipa.CopperMod;
+import com.jinpalhawang.jambudvipa.item.ItemModelProvider;
+
+public class BlockBase extends Block implements ItemModelProvider {
 
   protected String name;
 
@@ -20,8 +21,9 @@ public class BlockBase extends Block {
     setRegistryName(name);
   }
 
-  public void registerItemModel(ItemBlock itemBlock) {
-    CopperMod.proxy.registerItemRenderer(itemBlock, 0, name);
+  @Override
+  public void registerItemModel(Item item) {
+    CopperMod.proxy.registerItemRenderer(item, 0, name);
   }
 
   @Override

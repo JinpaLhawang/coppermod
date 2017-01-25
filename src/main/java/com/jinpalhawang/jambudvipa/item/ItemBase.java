@@ -5,7 +5,7 @@ import com.jinpalhawang.jambudvipa.CopperMod;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class ItemBase extends Item {
+public class ItemBase extends Item implements ItemModelProvider {
 
   protected String name;
 
@@ -15,7 +15,8 @@ public class ItemBase extends Item {
     setRegistryName(name);
   }
 
-  public void registerItemModel() {
+  @Override
+  public void registerItemModel(Item item) {
     CopperMod.proxy.registerItemRenderer(this, 0, name);
   }
 

@@ -5,21 +5,32 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import com.jinpalhawang.jambudvipa.item.ItemModelProvider;
+import com.jinpalhawang.jambudvipa.item.ItemOreDict;
+
 public class ModBlocks {
 
   public static BlockOre oreCopper;
 
   public static void init() {
-    oreCopper = register(new BlockOre("oreCopper")
+    oreCopper = register(new BlockOre("ore_copper", "oreCopper")
         .setCreativeTab(CreativeTabs.MATERIALS));
   }
 
   private static <T extends Block> T register(T block, ItemBlock itemBlock) {
     GameRegistry.register(block);
-    GameRegistry.register(itemBlock);
+    if (itemBlock != null) {
+      GameRegistry.register(itemBlock);
 
-    if (block instanceof BlockBase) {
-      ((BlockBase) block).registerItemModel(itemBlock);
+      if (block instanceof ItemModelProvider) {
+        ((ItemModelProvider) block).registerItemModel(itemBlock);
+      }
+      if (block instanceof ItemOreDict) {
+        ((ItemOreDict) block).initOreDict();
+      }
+      if (itemBlock instanceof ItemOreDict) {
+        ((ItemOreDict) itemBlock).initOreDict();
+      }
     }
 
     return block;
