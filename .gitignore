@@ -14,7 +14,7 @@ logs/
 mods/
 resourcepacks/
 saves/
-world/
+/world/
 server.properties
 eula.txt
 options.txt
