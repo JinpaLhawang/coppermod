@@ -1,6 +1,16 @@
 # Items
-item.ingotCopper.name=Copper Ingot
-item.copper_sword.name=Copper Sword
+item.copper_ingot.name=Copper Ingot of Doom
+
+item.copper_sword.name=Copper Sword of Doom
+item.copper_pickaxe.name=Copper Pickaxe of Doom
+item.copper_axe.name=Copper Axe of Doom
+item.copper_shovel.name=Copper Shovel of Doom
+item.copper_hoe.name=Copper Hoe of Doom
+
+item.copper_helmet.name=Copper Helmet of Doom
+item.copper_chestplate.name=Copper Chestplate of Doom
+item.copper_leggings.name=Copper Leggings of Doom
+item.copper_boots.name=Copper Boots of Doom
 
 # Blocks
-tile.oreCopper.name=Copper Ore
+tile.copper_ore.name=Copper Ore of Doom

@@ -14,6 +14,11 @@ import com.jinpalhawang.jambudvipa.block.ModBlocks;
 
 public class ModWorldGeneration implements IWorldGenerator {
 
+  private static int OVERWORLD_DIMENSION = 0;
+  private static int COPPER_MIN_Y = 16;
+  private static int COPPER_MAX_Y = 64;
+  private static int COPPER_ORE_CHANCES = 60; // 6
+
   @Override
   public void generate(
       Random random,
@@ -23,7 +28,7 @@ public class ModWorldGeneration implements IWorldGenerator {
       IChunkGenerator chunkGenerator,
       IChunkProvider chunkProvider) {
 
-    if (world.provider.getDimension() == 0) { // Overworld
+    if (world.provider.getDimension() == OVERWORLD_DIMENSION) {
       generateOverworld(random, chunkX, chunkZ, world, chunkGenerator,
           chunkProvider);
     }
@@ -38,7 +43,7 @@ public class ModWorldGeneration implements IWorldGenerator {
       IChunkProvider chunkProvider) {
 
     generateOre(ModBlocks.oreCopper.getDefaultState(), world, random,
-        chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(4), 6);
+        chunkX * 16, chunkZ * 16, COPPER_MIN_Y, COPPER_MAX_Y, 4 + random.nextInt(4), COPPER_ORE_CHANCES);
   }
 
   private void generateOre(

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "coppermod:items/ingotcopper"
+    "layer0": "coppermod:items/copper_leggings"
   }
 }

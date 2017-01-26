@@ -13,7 +13,7 @@ public class ModBlocks {
   public static BlockOre oreCopper;
 
   public static void init() {
-    oreCopper = register(new BlockOre("ore_copper", "oreCopper")
+    oreCopper = register(new BlockOre("copper_ore", "oreCopper")
         .setCreativeTab(CreativeTabs.MATERIALS));
   }
 

@@ -2,7 +2,7 @@
   "forge_marker": 1,
   "defaults": {
     "textures": {
-      "all": "coppermod:blocks/orecopper"
+      "all": "coppermod:blocks/copper_ore"
     }
   },
   "variants": {
