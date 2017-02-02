@@ -14,9 +14,9 @@ import com.jinpalhawang.jambudvipa.block.ModBlocks;
 
 public class ModWorldGeneration implements IWorldGenerator {
 
-  private static int OVERWORLD_DIMENSION = 0;
-  private static int COPPER_MIN_Y = 16;
-  private static int COPPER_MAX_Y = 64;
+  private static int OVERWORLD_DIMENSION = 0; // 0
+  private static int COPPER_MIN_Y = 0; // 16
+  private static int COPPER_MAX_Y = 64; // 64
   private static int COPPER_ORE_CHANCES = 60; // 6
 
   @Override
